@@ -6,7 +6,7 @@
 # catalog-version 0.6
 Name:		texlive-exsol
 Version:	0.6
-Release:	3
+Release:	4
 Summary:	Exercises and solutions from same source, into a book
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/exsol
