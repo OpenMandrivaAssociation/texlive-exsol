@@ -1,12 +1,6 @@
-# revision 30451
-# category Package
-# catalog-ctan /macros/latex/contrib/exsol
-# catalog-date 2013-05-13 10:56:37 +0200
-# catalog-license lppl1.3
-# catalog-version 0.6
 Name:		texlive-exsol
-Version:	0.6
-Release:	9
+Version:	1.2
+Release:	1
 Summary:	Exercises and solutions from same source, into a book
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/exsol
@@ -44,12 +38,10 @@ fancyvrb.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/exsol/exsol.sty
-%doc %{_texmfdistdir}/doc/latex/exsol/LICENSE
-%doc %{_texmfdistdir}/doc/latex/exsol/exsol.pdf
+%{_texmfdistdir}/tex/latex/exsol
+%doc %{_texmfdistdir}/doc/latex/exsol
 #- source
-%doc %{_texmfdistdir}/source/latex/exsol/exsol.dtx
-%doc %{_texmfdistdir}/source/latex/exsol/exsol.ins
+%doc %{_texmfdistdir}/source/latex/exsol
 
 #-----------------------------------------------------------------------
 %prep
