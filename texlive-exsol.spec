@@ -1,6 +1,6 @@
 Name:		texlive-exsol
-Version:	48977
-Release:	2
+Version:	69343
+Release:	1
 Summary:	Exercises and solutions from same source, into a book
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/exsol
