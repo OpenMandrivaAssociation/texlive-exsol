@@ -3,7 +3,7 @@ Version:	69343
 Release:	1
 Summary:	Exercises and solutions from same source, into a book
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/exsol
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/exsol
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exsol.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exsol.doc.r%{version}.tar.xz
