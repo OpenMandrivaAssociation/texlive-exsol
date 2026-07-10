@@ -1,55 +1,33 @@
-Name:		texlive-exsol
-Version:	69343
-Release:	1
-Summary:	Exercises and solutions from same source, into a book
+%global tl_name exsol
+%global tl_revision 73982
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.7
+Release:	%{tl_revision}.1
+Summary:	Exercises and solutions from the same source, into a book
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/exsol
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exsol.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exsol.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/exsol.source.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/exsol.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/exsol.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/exsol.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The packageThe exsol package provides macros to allow for
-embedding exercises and solutions in the LaTeX source of an
-instructional text (e.g., a book or a course text) while
-generating the following separate documents: - your original
-text that only contains the exercises, and - a solution book
-that contains only the solutions to the exercises (optionally,
-the exercises themselves are also copied to the solution book).
-The exercise data are generated when running LaTeX on your
-document; the first run also writes the solutions to a
-secondary file that may be included in a simple document
-harness, may be processed by LaTeX, to generate a nice solution
-book. The code of the package was derived (in large part) from
+This package provides macros to allow for embedding exercises and
+solutions in the LaTeX source of an instructional text (e.g., a book or
+a course text) while generating the following separate documents: your
+original text that only contains the exercises, and a solution book that
+contains only the solutions to the exercises (optionally, the exercises
+themselves can also be copied to the solution book). The exercise data
+are generated when running LaTeX on your document; the first run also
+writes the solutions to a secondary file that may be included in a
+simple document harness, may be processed by LaTeX, to generate a nice
+solution book. The code of the package was derived (in large part) from
 fancyvrb.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/exsol
-%doc %{_texmfdistdir}/doc/latex/exsol
-#- source
-%doc %{_texmfdistdir}/source/latex/exsol
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
